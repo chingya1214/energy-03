@@ -1,0 +1,54 @@
+.QA-card-container {
+    -webkit-perspective: 700;
+    -moz-perspective: 700;
+    perspective: 700;
+}
+.QA-card {
+    margin: 20px;
+    background-color: #0871b0;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+    transition: all 0.6s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    positon: relative;
+}
+.QA-front , .QA-back {
+    background-image: url("images/水問題1");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.QA-card h1 {
+    margin: 0;
+}
+.QA-back {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.QA-card:hover {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+/*
+.QA img:nth-child(1){
+    animation: twinkleQA 8s 0s linear infinite;
+}
+.QA img:nth-child(2){
+    animation: twinkleQA 8s 1s linear infinite;
+}
+.QA img:nth-child(3){
+    animation: twinkleQA 8s 2s linear infinite;
+}
+.QA img:nth-child(4){
+    animation: twinkle2 2.5s linear infinite;
+}*/

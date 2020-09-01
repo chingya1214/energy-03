@@ -1,0 +1,110 @@
+#part01,#part02,#part03,#part04,#part05{
+    text-align: center;
+}
+
+.ideass{
+    position: absolute;
+}
+.ideass a{
+    z-index: 99;
+    height: 50px;
+    width: 200px;
+    border: none;
+    opacity: 0.3;
+    background-color: #121212;
+    border-radius: 20px;
+    box-shadow:0px 0px 12px 9px #ffffff;
+}
+
+.ideass a:hover{
+    background-color: #121212;
+}
+
+
+.idea1{
+    top:0px;
+    left: 450px;
+}
+.idea2{
+    top: 270px;
+    left: 450px;
+}
+.idea4{
+    top: 635px;
+    left: 450px;
+}
+.idea5{
+    top: 1120px;
+    left: 450px;
+}
+
+
+/*卡片部分*/
+.card{
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #bb94e3;
+    border:3px #38295b solid;
+}
+.card-header{
+    background-color: #38295b;
+    color: #FFFFFF;
+}
+.card-text{
+    text-align: left;
+    line-height: 30px ;
+}
+.card-body > a{
+    padding: 5px 10px;
+}
+.card-body > a:hover{
+    background-color: rgba(63,28,87,0.6);
+}
+
+
+
+
+@media(min-width: 1500px){
+    .sslider{
+        height: 100%;
+    }
+}
+
+@media(max-width: 1500px){
+    .sslider{
+        height: 100%;
+    }
+}
+
+@media(max-width: 1200px){
+    .ideass a{
+        height: 42px;
+        width: 167px;
+        border-radius: 15px;
+    }
+    .idea1{
+        top:0px;
+        left: 377px;
+    }
+    .idea2{
+        top: 227px;
+        left: 377px;
+    }
+    .idea4{
+        top: 635px;
+        left: 377px;
+    }
+    .idea5{
+        top: 937px;
+        left: 377px;
+    }
+
+}
+
+@media(max-width: 950px){
+
+}
+
+@media(max-width: 500px){
+
+}

@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>能源守護者ENERGY GUARD</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="stylesheet" href="styles/idea_css.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/RWD_idea.css" rel="stylesheet">
+
+    <!-- BODY -->
+    <style>
+        .sslider > * {
+            transition: ease all .7s;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            font-family: 微軟正黑體;
+            background: #a0a6cb;
+        }
+
+        #aboutus,#game{
+            text-align: center;
+        }
+
+        .home{
+            position: relative;
+            height: 100%;
+            min-height: 100%;
+            width: 100%;
+            background: #38295b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+        }
+        .home-bottom {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            left: 0;
+            bottom: 50px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .home-bottom p{
+            color: #FFFFFF;
+            font-size: 15px;
+            opacity: 0;
+            animation: twinkle2 2.5s 6s linear infinite;
+        }
+        @keyframes twinkle2{
+            0%{opacity: 0;}
+            50%{opacity: 1;}
+            100%{opacity: 0}
+        }
+
+        .home-bottom a{
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            padding: 7px 10px;
+            color: #FFFFFF;
+            -webkit-transition: 0.2s background linear;
+            -moz-transition: 0.2s background linear;
+            transition: 0.2s background linear;
+            animation:twinkle 2.5s 6s linear infinite;
+            box-shadow:0px 0px 0px 0px #ffffff;
+        }
+        .home-bottom a:hover {
+            background-color: #fff;
+            color: #121212;
+            text-decoration: none;
+            animation: none;
+        }
+        @keyframes twinkle{
+            0%{background-color:;box-shadow:0px 0px 0px 0px #ffffff;}
+            50%{background-color: #fff;color: #121212;box-shadow:0px 0px 12px 4px #ffffff;}
+            100%{background-color:;box-shadow:0px 0px 0px 0px #ffffff;}
+        }
+
+        /*Navbar*/
+        .nav-link {
+            color: rgba(255,255,255,.7);
+        }
+        .fixed-nav{
+            z-index: 99;
+            width: 100%;
+        }
+
+        .navbar-nav .dropdown-menu{
+            background-color: #bccdff;
+            border: none;
+            border-radius: .65rem;
+        }
+        .dropdown-item{
+            border: #bccdff 4px dotted;
+        }
+        .dropdown-item:hover{
+            background-color: rgba(63,28,87,0);
+            border: #38295b 4px dotted;
+            border-radius: .65rem;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .sticky + section:nth-child(4) {
+            margin-top: 96px;
+        }
+        .logo_img{
+            height: 70px;
+            padding: 5px 3px;
+        }
+    </style>
+
+    <!-- 能源分頁-->
+    <style>
+        /*能源分頁*/
+        .water{
+            height: %;
+        }
+
+        .water h1{
+            font-weight: bolder;
+        }
+
+        .water h2,h3,h4,h5{
+            line-height: 1.5;
+        }
+
+        .classbtn a{
+            color: #f8f9fa;
+            background-color: transparent;
+            background-image: none;
+            border-color: #f8f9fa;
+            margin: 0px 10px;
+        }
+        .classbtn a:hover {
+            color: #212529;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+        .sslider{
+            width: 100%;
+            height: ;
+            min-height: 100%;
+            background: #a0a6cb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 50px;
+
+        }
+        .sslider a{
+            color: #f8f9fa;
+            background-color: transparent;
+            background-image: none;
+            border-color: #f8f9fa;
+            margin: 0px 10px;
+        }
+
+
+        .menu{
+            position: fixed;
+            right: 30px;
+            top: 400px;
+            color: #fff;
+            transform: translate(0, -50%);
+            z-index: 100;
+        }
+
+        .menu > ul{
+            padding-left: 0;
+            list-style: none;
+            display: block;
+            position: relative;
+            width: 20px;
+        }
+        .menu > ul > li{
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            padding: 3px;
+            border: 1px solid #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .dark{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            background: black;
+            opacity: 0;
+        }
+        .dark.onclickd{
+            opacity: 0.5;
+            z-index: 101;
+        }
+        .sdetail{
+            z-index: -11;
+            opacity: 0;
+            background: #7BAABE;
+            border-radius: 25px;
+            position: fixed;
+            top: 120px;
+            left: 200px;
+            width: 75%;
+        }
+        .sdetail.onclickd{
+            opacity: 1;
+            z-index: 102;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .class_detail01{
+            position: absolute;
+            top:20px;
+            left: 0px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .class_detail02{
+            position: absolute;
+            top: 70px;
+            left: 320px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .class_detail03{
+            position: absolute;
+            top:250px;
+            left:90px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .classes{
+            color: #FFFFFF;
+        }
+
+        .introoo:hover{
+        }
+
+        .introimg{
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            -webkit-animation-name: fadeIn,colorchange;
+            animation-name: fadeIn,colorchange;
+            -webkit-animation-duration: 7s,4s;
+            animation-duration: 7s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 4s;
+            -webkit-animation-delay: 4;
+            -o-animation-delay: 4s;
+            -moz-animation-delay: 4s;  /**延迟动画**/
+            filter: drop-shadow(0px -20px 25px rgba(225,255,164,0.57));
+        }
+
+    </style>
+
+    <!--影片黑屏按鈕-->
+    <style>
+        .modal-backdrop{
+            z-index: 100!important;
+            background-color: #FFFFFF;
+        }
+        .modal-dialog{
+            max-width: 900px;
+        }
+        .modal-header{
+            border-bottom: 1px solid #FFFFFF;
+        }
+        .modal-footer{
+            border-top: 1px solid #FFFFFF;
+        }
+        .modal-content{
+            background-color: #18293b;
+        }
+        .close{
+            color: #f8f9fa;
+        }
+        .modal-body .col-6,.modal-body .col-12{
+            margin-top:20px;
+        }
+        .modal-body{
+            color: #FFFFFF;
+            line-height:1.5;
+        }
+        .modal-title{
+            color: #FFFFFF;
+            padding-left: 10px;
+        }
+    </style>
+
+    <!--提示文本-->
+    <style>
+        .note{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            bottom:-70px;
+            opacity: 1;
+            color: rgba(76,80,100,0.84);
+        }
+    </style>
+
+    <!--footer-->
+    <style>
+        .footer {
+            color: rgba(63,28,87,0.92);
+            z-index: 15;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            top: -5%;
+        }
+        #gotop {
+            opacity: 0.7;
+            font-size: 30px;
+            position:fixed;
+            z-index:90;
+            right:30px;
+            bottom:31px;
+            display:none;
+            width:50px;
+            height:50px;
+            color:#fff;
+            background: #38295b;
+            line-height:50px;
+            border-radius:50%;
+            transition:all 0.5s;
+            text-align: center;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            -webkit-transition: 0.2s background linear;
+            -moz-transition: 0.2s background linear;
+            transition: 0.2s background linear;
+        }
+        #gotop:hover{
+            opacity: 1;
+        }
+    </style>
+
+
+</head>
+<body>
+<!-- Modal -->
+<section class="move-box">
+    <div class="modal fade" id="idea1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">1.專案問題確立</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>現今經濟發展迅速的時代，能源的使用率逐漸攀升，除了帶來社會繁榮 ，地球資源也因此被大量消耗。在石化燃料過度使用下，造成近年來全球氣 候變遷的現象加劇，如何妥善使用能源成為現在備受關注的一大議題。因此 ，政府(經濟部能源局，2017)提出能源政策去做應對，而如何推動能源教育 政策宣導，也許是我們現在可以做的事情。身為現代公民的我們，如何結合 能源政策，設計相關推動政策的教育宣導，配合學校課程實施能源教育，來 讓國小學生有足夠的能源認知及相關知識，此為值得探討和研究之方向。</p>
+                                <p>目前學校所實施的能源教育，目的在於能讓國小學生在學習中養成正確 的認知及態度，並使國小學生有足夠的能源認知及養成正確的能源使用態度 與行為，使能源的使用發揮最高效益。徐昊杲與施秀青認為國小學童對於能 源相關知識缺乏足夠認識和了解（2014），學童在學習能源相關知識時，覺 得有困難度，可能原因在於1.能源觀念偏於抽象，不易理解。2.內容中有些許 專有詞彙對於國小學生偏難，未解釋清楚名詞（吳家偉、楊朝平，2013）。3. 教材編排內容分散，使概念與知識未完整。傳遞模糊且有限的能源知識，自 然使國小學童觀念建構不完全，導致學童的學習狀況難以達到預期的效果（ 辛懷梓、張自立、諶佩明，2013）。長期下來，國小學生開始覺得學習能源知 識是很困難的，逐漸開始害怕且排斥學習。我們希望在國小階段所學習到的 能源知識能有效地被學生吸收，並且考量到現在孩童逐漸以數位化的方式來 學習知識，因此，如何設計適當能源教材，以提升國小學童對於能源知識的 學習興趣是目前當務之急。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="idea2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">2.文獻研究整理</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h4>(1)國小兒童階段能源教育的重要性探討</h4>
+                                <p>現今能源使用程度不斷提升，促使全球氣候變遷逐漸嚴重，能源短缺的情況使得全球經濟通貨膨脹(丁仁東，2010)。面臨有限的資源下，如何永續發展，能源議題的探討已變得極度重要，在教育內容中更是不可或缺（王如哲、黃月純，2011）。全球開始推動環境保護，永續發展之綠色議題越來越被重視，開發再生能源和推動節約能源已成為台灣需關切探討之議題（石文傑、廖錦文、盧建余，2007）。為了因應未來能源缺乏的時代，全體國民都應具備有足夠的能源素養，某個程度而言，「節能」已相當於某種國民應盡的義務（辛懷梓、張自立、諶佩明，2013）。學童在學習節能的相關知識後，在態度與行為會呈現正向的表現（鍾采容，2014）。若讓孩子從在學時期就能了解目前能源使用的狀況及發展趨勢，對於未來能源適應與應用的能力也會有所幫助（石台榮，2009）。在政府施行的能源政策下(王秀紋等人，2008)，能源教育應從小開始，從小培養良好的能源相關知識及概念，使此相關觀念深植人心。能源不該單只是國家的政策，更要深入實行至教育層面（賴貞嫻，民98）。國小能源教育之推行是重要的，不應忽視，也應了解現階段之能源教育狀況，是故針對國小能源教育現況進行探討有其必要性。</p>
+                                <h4>(2)國小階段能源教育的實施現況及困難探討</h4>
+                                <p>國小階段的能源教育目的在於教導學生使用能源的觀念以及培養節約能源的習慣（張有典，2004），但真正切入能源詳細解說部分佔極少數。不應只單方面傳授節能之觀念，也需讓學生對能源相關知識、目前能源使用概況及對能源的未來發展趨勢有所了解（石台榮，2009），使整個能源教學呈現完整狀態。台灣的能源教育內容雖然多元，但內容編排皆分散在各章節領域，零星分散的狀況讓學習效果不盡理想，整體的教學效果也未實際反映在能源消耗上（吳天貴，2007）。能源教育大部分皆融合其他領域教學，時常導致課堂內容以其他領域為主，能源教育為輔，使能源內容概念被分割。這樣的教材規劃，讓國小學生難以全面了解能源內容，也讓教師難以掌握能源概念是否講述完整（余鈺焜，2007）。此情形讓教師只能在各領域課程中找出相關的學習目標，拼湊出國小階段能源教育的內容，使教學目標不明確（石台榮，2009）。不完善的能源教育，使能源教育雖然已實施多年，國小學生在能源知識和觀念方面是有提升，但對於能源態度之培養及延續，未有明顯之效果（吳天貴，2007）。從課綱中（國家教育研究院，2015）看出，能源教育最初階段為國小三四年級，為最早開始教育和培養能源觀念階段。由此可知，國小三四年級為能源教育初始學習時期，也是值得分析探討之階段。</p>
+                                <p>國小三四年級階段尚未有深入的自然科學觀念，此階段的教育偏重於以「觀察」的方式去認識自然科目（國家教育研究院，2015）。國小學生能源認知面向普遍集中於石油和電，次級能源和再生能源的部分較為不足，而節能觀念中，電器與食育樂之部分皆為不足（辛懷梓、張自立、諶佩明，2013）。能源較難以想像，能透過觀察學習的部分偏少。領綱中多講求認識、察覺的能力，最容易觀察的太陽能被作為一大宗主題，至於其他能源若無實地觀察，是很難理解其中運作的原理。若交由授課老師帶隊實地觀察，往往費時費力。由於能源教育的內容在理論上佔多數，教學方面需有專業的理論基礎，此方面是多數小學教師較於缺乏的，因而小學教師在教學時相對會有難度（張瑞芬，2013）。若老師用講述的授課方式傳授能源相關知識，難以形容或敘述貼切，學生難以單憑文字或語詞來了解能源相關知識。若無適用的教材或教學方式，容易導致學生有模糊觀念、迷思概念或名詞未能理解等問題。</p>
+                                <h4>(3)國小階段能源教育教材現況分析探討</h4>
+                                <p>經由針對能源教育相關教材的彙編與整理，發現目前國小階段能源教育教材約有網頁教材與影片教材，這兩類教材經由初步分析亦發現對於國小能源教育有：1. 偏測驗達分型，著重考試2. 互動性低 3. 認知負荷過多，一部影片傳達的知識量不多4. 許多教材需額外下載，減少使用意願。</p>
+                                <p>且由上述文獻分析可以發現國小階段的能源教育對於未來能源的使用與推廣具指標性的意義，然而，由現今的國小能源教育現況探討發現，目前存在有的問題有：1. 國小階段偏重於「觀察」，能源大多為抽象概念，此階段學童較不易理解。2.國小能源教材則以太陽能為較好觀察的能源，因此課本多為介紹此能源相比之下其他能源較少。3. 需實地觀察才較易了解之能源，例如：火力發電、電能的傳輸、潮汐發電、核能發電等因不易觀察而較難理解及介紹。</p>
+                                <p>國小學生對於全球暖化、節能減碳、減少碳排放等相關議題的資訊主要來源是學校老師、電視媒體及網際網路（鍾采容，2014）。現在處於數位網路時代，其無遠弗屆的力量令人驚嘆。這個時代的學童，網路已成為了他們生活中的一部分；另一方面，網路也成了獲取知識的另一個途徑，尤其多媒體影音，更是容易吸引學童的眼光，促進學習興趣（張忠義，2015）。利用大眾傳播媒體的數位電子媒介推廣教學，更可增加學生的學習興趣及接收力，因此大眾傳播媒體是非常值得應用於能源教育的工具（石台榮，2009）。為了促進學生更加了解能源相關知識、能源應用發展，可藉由多媒體影音、數位網路的應用，提升學習興趣。教學上，可多加利用多媒體工具教學，豐富教學內容，讓學童更加願意學習能源的知識（林曉雯、陳碩祈、陳麗月，2016）。善用現今數位網路和大眾傳播，融入教學，可使能源教育和相關議題更加遠播和容易理解，促進學生對能源有更清楚地瞭解。其中需特別注意國小能源知識內容與理解範圍、認知負荷程度、情境式教學成效性、教材影音長度控制、網站介面使用規劃、遊戲式教學適切性。是故本研究主要針對國小中年級學生，以多媒體學習理論設計整體教材，雙碼理論與認知負載理論解決傳統教材中效果短期和負載過多產生的挫敗問題，以情境認知理論使學童，使學童置身於情境中，激發學習興趣以及思考探索的機會。應用雛型系統設計，反覆測試，以發展能源教育相關教材，其能提升學生的能源知識、素養與辨別能力。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="idea4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">4.創新設計方法</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>本研究經文獻分析與雛型系統設計法，經過文獻探討，針對能源教材以多媒體教材設計原則，融入情境式學習方式，製作能源教育網站與教育動畫影片，以探究多媒體教材對學童知識學習的影響程度。將國小能源教育內容融入其中，以進行	能源教材設計、教材網站規劃、整體教材設計修正歷程，相關說明如下敘述。</p>
+                                <h4>4.1教材設計</h4>
+                                <p>本教材運用多媒體教材設計原則方法，針對國小中年級學生的能源教材在過去學習的關鍵問題進行設計，主要設計特色為以情境式教學與認知學習理論，借重多媒體數位教材促進國小中年級學童對能源相關知識的學習。整體教材包含教材知識內容、動畫輔助內容、遊戲體驗內容、教材評量內容，相關設計如下：</p>
+                                <h5>(1)能源教材知識內容</h5>
+                                <p>本研究之能源教材知識內容，能源種類包含水力能、化石燃料、太陽能、風力能、核能與生質能，對象設定為國小中年級，以進行教學分析。首先確定目前教育部設定國小中年級能源教學內容的廣度與深度，符合九年一貫能力指標，釐清學習內容中各項知識與態度的相互關係，為後續設計教材奠定基礎。分析能源教育目前問題，分別為1.多為建立使用能源的正確觀念，能源知識的部分極少。2.學生對能源態度的素養尚未提升。3.對於日常生活中難以觀察的能源了解不足。本設計教材針對這些問題進行改善設計，涵蓋的知識內容為各能源介紹、產能過程、優缺點分析，建構生活情境，使知識應用在日常生活和對環境影響。不僅傳遞正確知識，也在教育過程中建立良好的能源認知，培養能源素養。現今的國小能源教材中其優點多為1.以敘事故事導入觀念2.台詞設計為國小年齡對白3.圖文搭配，動畫風格統一。但缺點多為1.內容文字太多，無重點標示2.抽象概念未詳細解說3.多為講師解說搭配簡報播放，生硬無趣4. 以考試為設計方向的教學影片較多，著重測驗練習，易讓學童只是記憶內容，導致被動學習。因此本研究保有上述優點，進而修改其缺點，利用多媒體影音製作國小能源教材，解決枯燥乏味的文字教學方式，以及將抽象觀念轉為具體化視覺呈現，創設情境激發學童學習動機。</p>
+                                <h5>(2)能源動畫教材內容</h5>
+                                <p>本研究的動畫教材設計，主要包含腳本企劃、動畫素材設計、動畫製作。運用多媒體學習認知理論製作能源動畫教材，以視覺與聽覺搭配，可免去分散注意力效應（split-attention effect）。雙碼理論（dual-coding theory, DCT）的認知模式應用在動畫視覺中的字象系統及圖像系統部分，同時且有效地處理此雙管道可提升學習成效。在腳本企劃設計，以情境式教學法的概念，設計主角在年紀與對能源認知上與國小學童相同，讓學童在視聽動畫的同時，將自己帶入主角的角色一同思考，並透過能源探員角色取代「教師、演講人」，讓學童感覺到這是部有趣的動畫，未有上課的感受。將劇情設定為日常生活，讓學童明白能源與日常息息相關，連結生活的知識傳達模式，使學習者將認知活動與情感活動結合起來，激起學習情緒，且依其學習脈絡進行探索，培養出解決問題能力。腳本與知識的融合，除了明白國小能源教育之難易度，以及內容符合兒童的認知理解，提供他們有感應、能懂的訊息，考量到認知負載理論（Cognitive Load Theory，CLT），控制影片時間在五分鐘內，在設計上避免同一時段湧入大量的元素，知識內容適當且適時的加入，使學習者無考試讀書的壓力。本研究動畫素材設計部分，採用卡通式的風格，因卡通人物設計鮮明具特色，俏皮的形象使視聽者在觀看時有輕鬆的氛圍，有正向的學習效果（張琬翔，2007）。本研究之動畫製作運用動態圖像(Motion graphics)，平面設計的構圖與具特色的運鏡風格，可將大量資訊經設計安排以創意的手法傳遞訊息。彈性的人物場景變化，可將抽象能源觀念轉變為具體影像呈現，可使觀看者更加了解且印象深刻。</p>
+                                <h5>(3)能源遊戲教材內容</h5>
+                                <p>數位遊戲式學習（Digital Game Based Learning）為透過數位遊戲為平台或教材，讓玩家能在遊戲中學習，兼具遊戲性與教育性。遊戲式學習可在遊玩中創造興奮和歡樂氣氛，增加學習興趣與學習動機，進一步提升獲取知識的程度（Tahereh Partovi, Majid Reza Razavi，2019）。而使用數位媒體為學習媒介能更有效地達到教育目標，學生有更明顯的積極學習態度（S. Erhel, E. Jamet，2013）。本研究的數位遊戲教材設計為記憶翻牌小遊戲，簡易玩法使國小中年級可快速遊玩。翻牌遊戲包含視覺圖像與空間位置兩種認知，玩家在遊戲中需記住圖片特徵與矩陣位置，達到訓練工作記憶能力。我們設計將「備轉容量率」的知識內容融入至翻牌遊戲，使學習者在遊玩時，不僅能記憶備轉容量率之圖像顏色，也能複習備轉容量率為何和各顏色之指標意義，進而了解備轉容量率的重要性和其與生活能源的關聯，達到寓教於樂的效果。</p>
+                                <h5>(4)能源教材評量內容</h5>
+                                <p>本研究之能源教材評量內容，根據目前能源教育實施後國小中年級缺乏的能源知識以及本研究的教學目標所設計。主要內容涵蓋國小中年級基礎能源知識與相關認知能力，以瞭解本研究教材是否使國小學童達到學習成效。命題依據一般命題原則與撰擬選擇題之原則所設計，以選擇題的方式，可測量從簡單到複雜的學習結果，較不易受到猜答的影響，可信度與鑑別度較高。題幹設計需注意敘述要完整扼要，用字遣詞要前後一致，並配合國小中年級之閱讀能力水準。選項設計需注意各選項之間要有同質性，與題幹間應有相當的邏輯性，正確答案確定無爭議性，且誘答選項必須具備似真性。從評量測驗中，探討國小中年級對於本研究教材使用前後的能源知識提升程度，以及分析哪部分的教學目標未達成，以利教材後續修改。</p>
+                                <h4><br>4.2能源教材網站</h4>
+                                <p>本研究的能源教材網站架構主要以網站瀏覽之使用者經驗來設計，針對國小學童於網頁瀏覽習慣，建構學習性的網站瀏覽順序。因應給學童學習之裝置有所不同，如：電腦、平板、手機等，利用響應式網頁設計（Responsive web design，RWD），可根據顯示網頁的裝置來進行動態面板調整。在研究實作網站中，主要以情境故事包裝為基礎，建構學童之學習流程，流程主要為故事內容導讀、課程內容以任務模式進行，目的為解決目前能源危機、角色介紹、遊戲學習等。</p>
+                                <p>本研究網站包含七項主內容，分別為首頁（Home）、網站簡介（能源危機）、故事課程（探員出任務）、能源介紹（六大能源）、互動小遊戲、關於我們和製作歷程。網站設計為一頁式網頁，除了製作歷程為獨立分頁以外，其餘所有網站內容可經由滑動從頭到底瀏覽完畢，也可按上方選單移動到想觀看的內容區域。網站首頁呈現出我們所設計的情境虛構世界，宇宙中有各種類型的能源星球，滑鼠移動至星球圖示會發光且冒出探員星座，可欣賞各能源探員的樣貌。網站程式中加入許多動態圖像設計，讓畫面生動有趣，產生吸引力，引起往下欣賞的動機。網站簡介使用前導動畫短片，將文字簡介轉化為視聽動畫呈現，相較於單純文字生硬的敘述方式有趣許多。故事課程為能源動畫教材區域，將課程動畫用「任務」詞彙包裝，改善「課程」詞彙帶來的乏味感。右方加入各能源教學目標，以疑問語句呈現，可在觀看動畫前引發學童思考和好奇。能源介紹以探員介紹模式，將能源化身為探員角色，知識內化為角色性格與技能，使學童覺得在認識人物，而不是在課業學習。互動小遊戲為翻牌遊戲，可讓學童在觀看完動畫教學後進行遊戲，過程中複習動畫教育內容，加深印象。製作歷程分頁中介紹此網站教材製作過程、個案測試結果、網站版本修改歷程。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="idea5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLongTitle">5.結論與建議</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>現今能源已成為全球關注之議題，而台灣的能源高度仰賴進口，使節約能源與能源開發更是台灣需積極面對的議題，在能源政策的宣導下，能源教育為解決策略之一。為了使能源相關觀念深植人心，提高能源知識程度與培養節能觀念，能源教育應從小開始，而目前的能源教育最初階段為國小中年級。以往國小學童缺乏足夠的能源認知，在學習能源知識時覺得有困難度，認為抽象難以理解且詞彙艱澀難懂，造成學習動機減少。能源教材內容編排分散，使學童能源概念不完整。而現今可利用多媒體與情境式方式解決問題，將能源知識與觀念以動畫視覺呈現，不僅解決學習上的困難，也可促進學童學習意願。情境式連結生活，進而培養學童良好的能源素養。完整的能源教材網站可解決教材編排分散之問題。未來本研究將進一步蒐集資料，實際進入國小班級進行測驗分析，以作為整個系統的改進參考。期許本研究對台灣國小能源教育能有所幫助。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="fixed-nav sticky" id="fixed-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #38295b">
+        <a class="navbar-brand" href="index.html"><img src="images/LOGO_top.png" alt="" class="logo_img"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">回教材網站</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#part01">教材分析階段</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#part02">教材內容學習對象分析</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#part03">教材設計製作階段</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#part04">教材使用問卷結果</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+</section>
+<!-- Swiper -->
+<section class="water" style="margin-top: 96px">
+    <article class="sslider" id="part01">
+        <div class="container mt-3">
+            <div class="row" style="position:relative">
+                <div class="col-12 my-4"><h1>教材分析階段</h1></div><!-- /.col-lg-4 -->
+                <div class="col-12 my-4">
+                    <img src="images/流程.png" alt="" width="60%">
+                    <div class="ideass idea1">
+                        <a href="#" class="btn cha_detail" data-toggle="modal" data-target="#idea1"></a>
+                    </div>
+                    <div class="ideass idea2">
+                        <a href="#" class="btn cha_detail" data-toggle="modal" data-target="#idea2"></a>
+                    </div>
+                    <div class="ideass idea4">
+                        <a href="#" class="btn cha_detail" data-toggle="modal" data-target="#idea4"></a>
+                    </div>
+                    <div class="ideass idea5">
+                        <a href="#" class="btn cha_detail" data-toggle="modal" data-target="#idea5"></a>
+                    </div>
+                </div><!-- /.col-lg-4 -->
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="part02">
+        <div class="container mt-3">
+            <div class="row" style="position:relative">
+                <div class="col-12 my-4"><h1>教材內容學習對象分析</h1></div><!-- /.col-lg-4 -->
+                <div class="col-12 my-4" style="text-align: left">
+                    <h5>本研究以個案分析法，針對三位國小中年級學童進行動畫教材使用前後的水能源知識能力測驗。測驗題目依據水能源教材教學目標和選擇題命題原則所設計，共十二題，總分為120分。測驗目的在於透過考題問答中瞭解國小中年級學童目前能源認知的程度，且觀賞動畫教材後，分析本教材是否對學童學習能源知識有所成效與探討評量設計是否適切。<br>以下為部分測驗問題：</h5>
+                    <img src="images/part2_QA.png" alt="" width="80%" style="margin-left: 10%">
+                    <h5><br>觀看水能源動畫教材前的測驗，三位學童的答對題數分別為3題、4題、6題，而題目中以利用水位落差(位能) 轉為動能而帶動發電原理的學習目標考題錯誤率較高，對此觀念模糊。其次為備轉容量率的內容不了解，不清楚備轉容量率與過度使用電器的關係。</h5>
+                    <h5>觀看後，再次對三位學童進行測驗。答對題數分別為7題、10題、10題，明顯看出動畫教材有所成效。尤其是位能轉為動能而帶動發電的原理學習目標部分，原本測驗前模糊答錯，但觀看後學童能從影音中瞭解能源的形成過程，加深印象。</h5>
+                </div><!-- /.col-lg-4 -->
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="part03">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12 my-4"><h1>教材設計製作階段</h1></div><!-- /.col-lg-4 -->
+                <div class="col-12 d-flex p-1">
+                    <div class="card">
+                        <h2 class="card-header">版本一</h2>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                本研究整體教材初始版本：
+                            </h5>
+                            <h5 class="card-text ml-2">
+                                1.	首頁畫面有網站名稱圖示和火箭動態圖像，往下滑動可至故事動畫區域的文字簡介畫面，右方有數字選項可經由點選或向右滑動觀看故事動畫。<br>
+                                2.	動畫為分段式呈現，每個疑問圖示可點擊觀看此短片獲得答案，短片為獨立動畫視窗。<br>
+                                3.	能源介紹為靜態圖文呈現。<br>
+                                4.	互動小遊戲為備轉容量率的翻牌遊戲，按下開始按鈕可計時，增加遊玩中競爭刺激感，提升學童興趣。<br>
+                                5.	動畫合集為每個能源教學動畫的完整版，將故事課程中的分段式短片合併，在此分頁可看完整版。<br>
+                            </h5>
+                            <p></p>
+                            <a href="http://edu-energy-guard.azurewebsites.net/?fbclid=IwAR0GS1FUbZkNc8Mm7WoP5m2dZVo5VIeKtMEhvSqBw082q8sdfH9OUJa-cq8" target="_blank" class="btn"><h5>觀看網頁</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12"><i class="fas fa-angle-double-down" style="font-size: 30px"></i></div>
+                <div class="col-12 d-flex p-1">
+                    <div class="card">
+                        <h2 class="card-header">版本二</h2>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                整體教材初始版本製作完成後，經過系統測試及建議回饋，修改為第二版本：
+                            </h5>
+                            <h5 class="card-text ml-2">
+                                1.	多增加圖案豐富網站畫面，以網站程式創造出動態圖像 <br>
+                                2.	文字簡介轉變成多媒體影音，以前導片呈現 <br>
+                                3.	網站改為「一頁式網頁」，使用者可由下往上滑動觀看所有教材內容，也可點擊上方選單快速到達內容區域，此外右下方增加一按鈕可點擊直接到網頁最上方—首頁畫面。<br>
+                                4.	將分段式動畫教材移除，改為完整動畫，右方增加短文動畫課程簡介 <br>
+                                5.	將翻牌遊戲中的計時功能移除，避免學童遊戲關注在達到最快速度，增加提示按鈕，可讓學童經由提示回想動畫中備轉容量率之內容。另外，在首頁畫面多增加能源星球圖案，強化情境式學習部分<br>
+                            </h5>
+                            <p></p>
+                            <a href="http://edu-energy-guard-2.azurewebsites.net/?fbclid=IwAR0GS1FUbZkNc8Mm7WoP5m2dZVo5VIeKtMEhvSqBw082q8sdfH9OUJa-cq8" target="_blank" class="btn"><h5>觀看網頁</h5></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12"><i class="fas fa-angle-double-down" style="font-size: 30px"></i></div>
+                <div class="col-12 d-flex p-1">
+                    <div class="card">
+                        <h2 class="card-header">版本三</h2>
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                整體教材第二版本製作完成後，再次系統測試及使用觀感建議，修改為第三版本：
+                            </h5>
+                            <h5 class="card-text ml-2">
+                                1.	在故事課程區域與能源介紹區域之間增加向下標示，提醒使用者可往下滑動 <br>
+                                2.	在動畫教材右方新增學習目標，以疑問句呈現，使學童持有好奇且進行思考，看完動畫後能獲得問題的解答 <br>
+                                3.	在故事動畫頁面中，右方新增大聲公動態圖示，可點選連結到此能源介紹。在能源介紹畫面新增按鈕，可連結至下一個動畫教材，方便學童學習不中斷。 <br>
+                                4.	將部分區域重新命名，文字詞彙使用貼近國小中年級，例如：「故事介紹」改名為「能源危機」，「故事課程」改名為「探員出任務」，帶給學童趣味感，提高興趣。 <br>
+                                5.	增加製作歷程分頁，讓使用者能從中明白我們的研究製作過程。 <br>
+                            </h5>
+                            <p></p>
+                            <a href="http://edu-energy-guard-4.azurewebsites.net/?fbclid=IwAR0GS1FUbZkNc8Mm7WoP5m2dZVo5VIeKtMEhvSqBw082q8sdfH9OUJa-cq8" target="_blank" class="btn"><h5>觀看網頁</h5></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </article>
+    <article class="sslider" id="part04">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12 my-4"><h1>教材使用問卷結果</h1></div><!-- /.col-lg-4 -->
+                <div class="col-12" style="text-align: left">
+                    <h5>本研究以問卷回饋方式，以初版整體教材區分為教學網站、動畫教材、遊戲評量、整體教材共四部分進行調查，共蒐集49份問卷於展覽現場，其中年齡層多為19-30歲。其中本研究大部分皆獲得正向評價，七成以上的受試者認為本研究的整體教材對國小中年級學童能源知識學習是很有幫助的，認為很有教育意義，有觀看意願。對於以多媒體教材傳授能源正確觀念的方式持正面看法，並鼓勵用此情境模式運用在教學上。在初版網站的美觀性建議可多增加動態圖像豐富畫面、減少文字敘述，可多用明亮的色調，顯出活潑感。而系統操作部分選單不明確、有些選項連結不穩定，在二版網站中皆加以修正。建議動畫教材角色可再有趣化，遊戲教材可再增添備轉容量率的教育內容。部分受試者認為未來可給國小中年級班級學童實測，觀察學童如何操作，可更直覺性地瞭解如何修改適合學童的操作介面。</h5>
+                    <img src="images/part4_QA.png" alt="" width="80%" style="margin-left: 10%">
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="part05">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8" style="background-color: #38295b;color: #FFFFFF;border-radius: 10px;">
+                    <h4>本研究已完成GCCCE2020投稿論文——<a href="images/20191203_GCCCE_論文.pdf" target="_blank">論文檔案連結處</a></h4>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+    <div class="footer">
+        <h6>©2019 能源守護者 Energy Guard - 能源知識教學網</h6>
+    </div>
+</section>
+
+<a href="#" id="gotop">
+    <i class="fa fa-angle-up"></i>
+</a>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+<script src="js/jquery.parallaxify.min.js"></script>
+
+<script type="text/javascript" src="scripts/htm5game.matchgame.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        speed:800,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+    });
+</script>
+
+<!-- 黑屏 -->
+<script>
+    $(".btn.cha_detail").click(function(){
+        $(".sdetail").addClass("onclickd");
+        $(".dark").addClass("onclickd");
+    });
+
+    $(".close").click(function(){
+        $(".sdetail").removeClass("onclickd");
+        $(".dark").removeClass("onclickd");
+    });
+</script>
+
+<!-- 選單出現 -->
+<script>
+    //選單出現
+    $(".menu").hide();
+    $(window).scroll(function(){
+        if($(this).scrollTop()>800){
+            $(".menu").fadeIn();
+        } else {
+            $(".menu").fadeOut();
+        }
+    });
+
+    //緩慢滑動
+    $(document).on('click', '.pagebtn', function(event){
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 850);
+    });
+</script>
+
+<!-- 固定navbar -->
+<script>
+    /*固定navbar*/
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("fixed-nav");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
+<!--影片-->
+<script>
+    $(function(){
+        $('video').bind('play', function (e)
+        {
+            var video = $('video');
+            for(var i=0;i<video.length;i++)
+            {
+                if(video[i] != e.target)
+                {
+                    video[i].pause();
+                }
+            }
+        });
+    });
+</script>
+
+<!--TOP-->
+<script type="text/javascript">
+    $(function() {
+        /* 按下GoTop按鈕時的事件 */
+        $('#gotop').click(function(){
+            $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+            return false;
+        });
+
+        /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 500){
+                $('#gotop').fadeIn();
+            } else {
+                $('#gotop').fadeOut();
+            }
+        });
+    });
+</script>
+
+<!--滾動浮現-->
+<script>
+    $(window).on('scroll load', function() {
+        $('.sslider > *').each(function(i) {
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight() / 8;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if (bottom_of_window > bottom_of_object) {
+                $(this).css({
+                    'opacity': '1',
+                    'transform': 'translateY(' + 0 + 'em)'
+                });
+            } else {
+                $(this).css({
+                    'opacity': '0',
+                    'transform': 'translateY(' + 2 + 'em)'
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+</script>
+
+
+</body>
+</html>
+

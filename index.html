@@ -1,0 +1,1998 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>能源守護者ENERGY GUARD</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="stylesheet" href="styles/matchgame.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filpcard.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/RWD.css" rel="stylesheet">
+
+    <!-- BODY -->
+    <style>
+        .sslider > * {
+            transition: ease all .7s;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            font-family: 微軟正黑體;
+            background: #a0a6cb;
+        }
+
+        #aboutus,#game{
+            text-align: center;
+        }
+
+        .home{
+            position: relative;
+            height: 100%;
+            min-height: 100%;
+            width: 100%;
+            background: #38295b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+        }
+        .home-bottom {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            left: 0;
+            bottom: 50px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .home-bottom p{
+            color: #FFFFFF;
+            font-size: 15px;
+            opacity: 0;
+            animation: twinkle2 2.5s 6s linear infinite;
+        }
+        @keyframes twinkle2{
+            0%{opacity: 0;}
+            50%{opacity: 1;}
+            100%{opacity: 0}
+        }
+
+        .home-bottom a{
+            border-radius: 50%;
+            border: 2px solid #FFFFFF;
+            padding: 7px 10px;
+            color: #FFFFFF;
+            -webkit-transition: 0.2s background linear;
+            -moz-transition: 0.2s background linear;
+            transition: 0.2s background linear;
+            animation:twinkle 2.5s 6s linear infinite;
+            box-shadow:0px 0px 0px 0px #ffffff;
+        }
+        .home-bottom a:hover {
+            background-color: #fff;
+            color: #121212;
+            text-decoration: none;
+            animation: none;
+        }
+        @keyframes twinkle{
+            0%{background-color:;box-shadow:0px 0px 0px 0px #ffffff;}
+            50%{background-color: #fff;color: #121212;box-shadow:0px 0px 12px 4px #ffffff;}
+            100%{background-color:;box-shadow:0px 0px 0px 0px #ffffff;}
+        }
+
+        /*Navbar*/
+        .nav-link {
+            color: rgba(255,255,255,.7);
+        }
+        .fixed-nav{
+            z-index: 99;
+            width: 100%;
+        }
+
+        .navbar-nav .dropdown-menu{
+            background-color: #bccdff;
+            border: none;
+            border-radius: .65rem;
+        }
+        .dropdown-item{
+            border: #bccdff 4px dotted;
+        }
+        .dropdown-item:hover{
+            background-color: rgba(63,28,87,0);
+            border: #38295b 4px dotted;
+            border-radius: .65rem;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        .sticky + section:nth-child(4) {
+            margin-top: 96px;
+        }
+        .logo_img{
+            height: 70px;
+            padding: 5px 3px;
+        }
+    </style>
+
+    <!-- 能源分頁-->
+    <style>
+        /*能源分頁*/
+        .water{
+            height: 100%;
+        }
+
+        .water h1{
+            font-weight: bolder;
+        }
+
+        .water h2,h3,h4,h5{
+            line-height: 1.5;
+        }
+
+        .classbtn a{
+            color: #f8f9fa;
+            background-color: transparent;
+            background-image: none;
+            border-color: #f8f9fa;
+            margin: 0px 10px;
+        }
+        .classbtn a:hover {
+            color: #212529;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+        .sslider{
+            width: 100%;
+            background: #a0a6cb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+        }
+        .sslider a{
+            color: #f8f9fa;
+            background-color: transparent;
+            background-image: none;
+            border-color: #f8f9fa;
+            margin: 0px 10px;
+        }
+
+        .outgroung{
+            z-index: 99;
+            position: absolute;
+            top:0;
+            left: 0;
+            display: none;
+        }
+        .outgroung:hover{
+            display: none;
+        }
+        .videoframe>.swiper-slide:active>.outgroung{
+
+        }
+
+        .comicbody{
+            border: none;
+            margin: 0px 0px;
+        }
+
+
+        .menu{
+            position: fixed;
+            right: 30px;
+            top: 400px;
+            color: #fff;
+            transform: translate(0, -50%);
+            z-index: 100;
+        }
+
+        .menu > ul{
+            padding-left: 0;
+            list-style: none;
+            display: block;
+            position: relative;
+            width: 20px;
+        }
+        .menu > ul > li{
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: relative;
+            padding: 3px;
+            border: 1px solid #fff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .dark{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -10;
+            background: black;
+            opacity: 0;
+        }
+        .dark.onclickd{
+            opacity: 0.5;
+            z-index: 101;
+        }
+        .sdetail{
+            z-index: -11;
+            opacity: 0;
+            background: #7BAABE;
+            border-radius: 25px;
+            position: fixed;
+            top: 120px;
+            left: 200px;
+            width: 75%;
+        }
+        .sdetail.onclickd{
+            opacity: 1;
+            z-index: 102;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .class_detail01{
+            position: absolute;
+            top:20px;
+            left: 0px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .class_detail02{
+            position: absolute;
+            top: 70px;
+            left: 320px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .class_detail03{
+            position: absolute;
+            top:250px;
+            left:90px;
+            width: 100%;
+            border-radius: 50%;
+        }
+        .classes{
+            color: #FFFFFF;
+        }
+
+        .introoo:hover{
+        }
+
+        .introimg{
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            -webkit-animation-name: fadeIn,colorchange;
+            animation-name: fadeIn,colorchange;
+            -webkit-animation-duration: 7s,4s;
+            animation-duration: 7s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 4s;
+            -webkit-animation-delay: 4;
+            -o-animation-delay: 4s;
+            -moz-animation-delay: 4s;  /**延迟动画**/
+            filter: drop-shadow(0px -20px 25px rgba(225,255,164,0.57));
+        }
+
+        .cutline{
+            margin-top: 40px;
+            text-align: center;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 7s,3s;
+            animation-duration: 7s,3s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+
+    </style>
+
+    <!-- 旋轉動畫 -->
+    <style>
+        /*旋轉動畫*/
+        @keyframes spin {
+            to { transform: rotate(1turn); }
+        }
+
+        .path {
+            position: relative;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: ;
+            margin: 50px auto;
+
+            opacity:0;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+            -webkit-animation-duration: 7s;
+            animation-duration: 7s;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+        }
+
+        .Planet{
+            z-index: 0;
+            position: relative;
+            top:0px;
+            left: 0px;
+
+        }
+        .pp{
+            width: 22%;
+            position: absolute;
+        }
+        .pp>a>img:hover{
+            -webkit-filter: drop-shadow(0px 0px 25px rgba(0, 255, 178, 1));
+            filter: drop-shadow(0px 0px 25px rgba(0, 255, 178, 1));
+            transform: scale(1.6);
+        }
+
+        .planer01{
+            top:-20px;
+            left: -120px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 7s,4s;
+            animation-duration: 7s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        .planer02{
+            top:160px;
+            left: -200px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 5s,4s;
+            animation-duration: 5s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        .planer03{
+            top:340px;
+            left: -120px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 3s,4s;
+            animation-duration: 3s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        .planer04{
+            top:-20px;
+            right: -120px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 3s,4s;
+            animation-duration: 3s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        .planer05{
+            top:160px;
+            right: -200px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 5s,4s;
+            animation-duration: 5s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        .planer06{
+            top:340px;
+            right: -120px;
+            opacity: 0;
+            -webkit-animation-name: fadeIn,baloon_1;
+            animation-name: fadeIn,baloon_1;
+            -webkit-animation-duration: 7s,4s;
+            animation-duration: 7s,4s;
+            -webkit-animation-iteration-count:1,infinite;
+            animation-iteration-count:1,infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+            animation-delay: 1s;
+            -webkit-animation-delay: 1s;
+            -o-animation-delay: 1s;
+            -moz-animation-delay: 1s;  /**延迟动画**/
+        }
+        /*.chh01,.chh02,.chh03,.chh04,.chh05,.chh06{
+            display: none;
+        }
+        .chh01.onhover,.chh02.onhover,.chh03.onhover,.chh04.onhover,.chh05.onhover,.chh06.onhover {
+            display: block;
+        }*/
+
+        .chh-l{
+            position:absolute;
+            left: -250px;
+            top:-90px;
+        }
+        .chh-r{
+            position:absolute;
+            right: -250px;
+            top:-90px;
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        @-webkit-keyframes bigger {
+            0% {
+                transform: scale(0.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes bigger {
+            0% {
+                transform: scale(0.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .sun {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: 100px;
+            left: 100px;
+
+            -webkit-animation-name: baloon_1;
+            animation-name: baloon_1;
+            -webkit-animation-duration: 4s;
+            animation-duration: 4s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+        }
+
+        @-webkit-keyframes baloon_1{
+            0% { transform:translateY(0px);}
+            50% {transform:translateY(20px);}
+            100% {transform:translateY(0px);}
+        }
+        @keyframes baloon_1{
+            0% { transform:translateY(0px);}
+            50% {transform:translateY(20px);}
+            100% {transform:translateY(0px);}
+        }
+
+
+
+        .avatar {
+            width: 250px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display: block;
+            animation: spin 6s infinite linear;
+            transform-origin: 50% 350px; /* 150px = path radius */
+        }
+
+        /*星空*/
+
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #38295b;
+            background-size: cover;
+            -webkit-background-size: cover;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            top: 300px;
+            left: 400px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.75);
+            box-shadow: 0px 0px 10px rgba(255,255,255,0.75);
+
+            opacity:0;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn;
+            -webkit-animation-duration: 6s;
+            animation-duration: 6s;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+        }
+    </style>
+
+    <!-- 左右分頁-->
+    <style>
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color:#000;
+            opacity: 1;
+            background: rgba(0,0,0,0.2);
+        }
+        .swiper-pagination-bullet-active {
+            color:#fff;
+            background: #007aff;
+        }
+
+        .swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 4px !important;
+        }
+
+        .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 20px !important;
+            right: 30px !important;
+            left: auto !important;
+            width: 10px !important;
+            height: 55%;
+        }
+    </style>
+
+    <style>
+        .chp_img_left{
+            width: 100%;
+            -webkit-animation-name: baloon_1;
+            animation-name: baloon_1;
+            -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+        }
+    </style>
+
+    <!--影片黑屏按鈕-->
+    <style>
+        .modal-backdrop{
+            z-index: 100!important;
+            background-color: #FFFFFF;
+        }
+        .modal-dialog{
+            max-width: 1400px;
+        }
+        .modal-header{
+            border-bottom: 0px solid #FFFFFF;
+        }
+        .modal-footer{
+            border-top: 0px solid #FFFFFF;
+            min-height: 20px;
+        }
+        .modal-content{
+            margin-top: 100px;
+            background: none;
+            background-image: url("images/角色介紹背景.png");
+            background-size:100% 100%;
+            background-repeat: no-repeat;
+            border: none;
+        }
+        .close{
+            color: #f8f9fa;
+            font-size: 70px;
+        }
+        .close:hover{
+            color: #FFFFFF;
+        }
+        .modal-body .col-6,.modal-body .col-12{
+            margin-top:20px;
+        }
+        .modal-body{
+            color: #FFFFFF;
+            line-height: 2;
+            padding: 2rem;
+        }
+
+        .modal-dialog-2{
+            max-width: 1400px;
+            color: black;
+        }
+        .modal-content-2{
+            background-image: none;
+            background-color: #FFFFFF;
+        }
+        .close-2{
+            color: #121212;
+            font-size: 50px;
+        }
+        .close-2:hover{
+            color: #000000;
+        }
+    </style>
+
+    <!--提示文本-->
+    <style>
+        .note{
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            position: absolute;
+            bottom:-70px;
+            opacity: 1;
+            color: rgba(76,80,100,0.84);
+        }
+    </style>
+
+    <!--影片-->
+    <style>
+        .videoframe{
+            padding: 5px;
+            border-radius: 20px;
+            border: #38295b 10px dotted;
+            background-color: #38295b;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16);
+        }
+
+        .videotext{
+            text-align: center;
+            position:relative;
+            left: -50px;
+        }
+
+        .videoarrow{
+            position: absolute;
+            z-index: -30;
+            height: 100%;
+            /*top:  -15px;
+            right: -100px;*/
+            -webkit-animation-name: baloon_2;
+            animation-name: baloon_2;
+            -webkit-animation-duration: 5s;
+            animation-duration: 5s;
+            -webkit-animation-iteration-count:infinite;
+            animation-iteration-count:infinite;
+            -webkit-animation-fill-mode: forwards ;
+            animation-fill-mode: forwards ;
+        }
+        .videoarrow:hover{
+            right: -130px;
+            -webkit-animation-name: none;
+            animation-name: none;
+        }
+        .videotitle{
+            text-align: center;
+            position: absolute;
+            left: 0px;
+            background-color: #38295b;;
+            color: #FFFFFF;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-right: 30px;
+            padding-left: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+        }
+
+
+
+    </style>
+
+    <!--遊戲-->
+    <style>
+        .start-btn a,.end-btn a{
+            color: #f8f9fa;
+            background-color: transparent;
+            background-image: none;
+            border-color: #f8f9fa;
+            margin: 0px 10px;
+        }
+        .start-btn a:hover,.end-btn a:hover {
+            color: #212529;
+            background-color: #f8f9fa;
+            border-color: #f8f9fa;
+        }
+
+    </style>
+
+    <!--關於我們-->
+    <style>
+        #aboutus .container .row .col-2 h3{
+            margin-top: 10px;
+        }
+    </style>
+
+
+    <!--footer-->
+    <style>
+        .footer {
+            color: rgba(63,28,87,0.92);
+            z-index: 15;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            top: -6%;
+        }
+        #gotop {
+             opacity: 0.7;
+             font-size: 30px;
+             position:fixed;
+             z-index:90;
+             right:30px;
+             bottom:31px;
+             display:none;
+             width:50px;
+             height:50px;
+             color:#fff;
+             background: #38295b;
+             line-height:50px;
+             border-radius:50%;
+             transition:all 0.5s;
+             text-align: center;
+             box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+             -webkit-transition: 0.2s background linear;
+             -moz-transition: 0.2s background linear;
+             transition: 0.2s background linear;
+         }
+        #gotop:hover{
+            opacity: 1;
+        }
+
+        #gotop2 {
+            opacity: 0.7;
+            font-size: 30px;
+            position:fixed;
+            z-index:90;
+            left:0px;
+            bottom:50%;
+            display:none;
+            width:50px;
+            height:100px;
+            color:#fff;
+            background: #38295b;
+            line-height:50px;
+            transition:all 0.5s;
+            text-align: center;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+            -webkit-transition: 0.2s background linear;
+            -moz-transition: 0.2s background linear;
+            transition: 0.2s background linear;
+        }
+        #gotop2:hover{
+            opacity: 1;
+        }
+    </style>
+
+
+</head>
+<body>
+<!-- Modal -->
+<section class="move-box">
+    <div class="modal fade" id="character-comic01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="mr-1">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <img class="chp_img_left" src="images/character_01_0.png" width="100%" alt="" style="">
+                            </div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>水能源</strong></h3>
+                                <h1>瓦特</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 慣常式水力發電、水庫式水力發電、川流式水力發電、調整池式水力發電、潮汐發電、抽水蓄能式水力發電</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    出生於水能源星球的他，對於水能的操作可是聊若指掌，穩重的個性使他能臨危不亂的解決問題，擅長利用地形高低起伏製造能源、解決問題。
+                                </h4>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic02" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center justify-content-center">
+                                <img class="chp_img_left" src="images/character_03_0.png" alt="">
+                            </div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>化石燃料能源</strong></h3>
+                                <h1>燃料大哥</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 煤炭發電、石油發電、天然氣發電</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    有龐大的財富及能力， 擅長利用地球的化石燃料製造能源，為推動經濟最重要的探員之一，也是地球上最知名的探員。
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center"><img class="chp_img_left" src="images/character_04_0.png" alt=""></div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>太陽能能源</strong></h3>
+                                <h1>桑妮</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 慣太陽能電池、太陽能熱水器、太陽能泵、光電轉換</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    活潑開朗的他，面對事情總是樂觀正向，喜歡與環境和平共處，現今藉由科技發展，他的能力也大大提升，總是帶給大家滿滿的活力，感覺有用不完的體力。
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic04" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center">
+                                <img class="chp_img_left" src="images/character_02_0.png" alt="">
+                            </div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>風能源</strong></h3>
+                                <h1>Wind</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 風力發電、帆船航行、滑翔翼飛行</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    開朗活潑的Wind如同風一般總是跑來跑去，喜歡旅遊的他常常搭著帆船、利用滑翔翼飛行去過許多國家，也擅長利用風力發電，不過常常會不小心吵到別人。
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic05" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center justify-content-center"><img class="chp_img_left" src="images/character_05_0.png" alt="" style=""></div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>核能能源</strong></h3>
+                                <h1>赫克</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 利用可控核反應來獲取能量、核分裂、核衰變和核融合</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    十分聰明，但總是神出鬼沒，是探員中的神秘人物，有些人覺得他是好人，但另一派人認為他是壞人，擅長利用核能反應製造能源，獲得能量。
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic06" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-6 d-flex align-items-center"><img class="chp_img_left" src="images/character_06_0.png" alt="" style=""></div>
+                            <div class="col-6 pt-5">
+                                <h3><strong>生質能能源</strong></h3>
+                                <h1>修米</h1>
+                                <h4 class="mt-3">
+                                    <strong>能力： 廢棄物分類壓縮、從植物中搾油、熱轉換、生物轉換</strong>
+                                </h4>
+                                <h4 class="mt-3">
+                                    害羞內向，喜歡閱讀各式各樣的書籍，因此十分聰明，能用許多知識將廢棄物循環利用，也能用廢食用油轉化為生質柴油、利用廢水養殖微藻並生產各式燃料。
+                                </h4>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="modal fade" id="character-comic01" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>源源不盡的水——水力發電</h2>
+                            </div>
+                            <div class="col-12">
+                                水力發電（英文：Hydropower）是運用水的勢能轉換成電能的發電方式，其原理是利用水位的落差(勢能)在重力作用下流動(動能)，
+                                例如從河流或水庫等高位水源引水流至較低位處，流的水流推動輪機使之旋轉，帶動發電機發電。<br><br>
+
+                                水力發電技術簡單而且完備，許多國家於水力發電之基礎工業，諸如水輪機、閥、水閘、發電機和相關電力設備等之製造，均已非常完善。
+                                除了提供廉價電力外，還有下列優點：管制洪水氾濫、提供灌溉用水、利於河流航運、提供尖峰時段電力調度。<br><br>
+                                而水力發電的建設也有許多種類，如：水庫式水力發電、川流式水力發電、調整池式水力發電、潮汐發電、抽水蓄能式水力發電等等，因此在提供電量上穩定且龐大。由於技術成熟，是目前人類社會應用最廣泛的可再生能源。
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic02" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>來去自如的風——風力發電</h2>
+                            </div>
+                            <div class="col-12">
+                                風能是潔淨的能源來源，因其豐富、取之不盡且廣泛分佈的特性，
+                                來提供風力發電所需的動力來源——風力發電是藉由空氣的流動 (風)，通過風車經特殊設計的葉片始其旋轉，推動發電機產生電力。<br><br>
+
+                                風能已成為現有能源中最便宜的可更新的能源。由於風能是由風的立方變化數構成（如風速的立方數），
+                                其經濟效益取決於風場的風力狀況，所以安裝越多風機的風場具有越高的經濟效益。<br><br>
+
+                                近年來，很多國家計劃把大量消耗的電量由風力發電來提供，而德國與丹麥就是其中之一。
+                                在2017年，風力發電於歐盟地區已佔總發電量的11.7%，並首次超過水力發電量成為歐盟最大的再生能源電力來源，而其中在丹麥的風力發電更是佔丹麥用電量43.4%。由此可見，風力發電將成為一大趨勢。
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic03" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>台灣發電量最大——火力發電</h2>
+                            </div>
+                            <div class="col-12">
+                                化石燃料能源是指以石油、天然氣、煤為代表的含碳能源，屬於不可再生的一次能源。<br><br>
+
+                                化石燃料能源最常用來發電的模式就是火力發電。在火力發電廠中，各種化石燃料如煤、燃料油、天然氣或油頁岩中儲存的化學能被逐步轉換成熱能、機械能最後變成電能，供向四方。
+                                <br><br>
+
+                                火力發電廠可以持續地大量發電，在許多國家，大部分電能均由火力發電廠提供。
+                                例如：臺灣台中火力發電廠目前是世界第二大燃煤火力發電廠，同時也是台灣發電量最大的發電廠。<br><br>
+
+                                然而，煤燃燒是空氣污染以及酸雨的罪魁禍首，而燃煤所排出的二氧化碳是溫度氣體之一，會做成溫室效應，
+                                現在已經可以肯定人為排放溫室氣體是近期全球暖化的主因，所以排放二氧化碳與全球暖化有極大關係，如何在環境維護下提供足夠的電力成為現在很重要的課題。
+
+
+
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic04" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>所有能源的源頭——太陽能</h2>
+                            </div>
+                            <div class="col-12">
+                                廣義上的太陽能是地球上許多能量的來源，如風能、化學能、水的勢能。化石燃料可以稱為遠古的太陽能。太陽能發電是一種新興的可再生能源。<br><br>
+
+                                太陽能技術分為有源（主動式）及無源（被動式）兩種。
+                                有源的例子有太陽能光電及光熱轉換，使用電力或機械設備作太陽能收集，而這些設備是依靠外部能源運作的，因此稱為有源。
+                                無源的例子有在建築物引入太陽光作照明等，當中是利用建築物的設計、選擇所使用物料等達至利用太陽能的目的，由於當中的運作無需由外部提供能源，因此稱為無源。<br><br>
+
+                                太陽能資源豐富，無需運輸，但生產太陽能板的過程對環境有嚴重且不可逆的污染，且會造成飛航安全。此外，目前利用太陽能的各種技術都具有成本極高的缺點，因此資本投資不菲。
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic05" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>擁有龐大能量的原子核——核能發電</h2>
+                            </div>
+                            <div class="col-12">
+                                核能是經由質量的轉化而從原子核釋放出來的能量，主要透過核分裂與核融合反應釋放能量。核能在反應爐中被轉化為熱能，熱能將水變為蒸汽推動汽輪發電機組發電。<br><br>
+
+
+                                根據國際能源署的資料，2007年全球電力有13.8%由核能提供。由此可見，核能發電也是一個目前主要的發電方式。
+                                而核子動力相關的重大事故包括三哩島事件（1979年）、車諾比核事故（1986年）、福島第一核電廠事故（2011年）和一些核子動力潛艇事故。<br><br>
+
+                                美國每年產生的核能居全世界首位，美國人消耗的電能中約20%來自於核能。如果按核能占總電能的百分比來看，法國核能則為全球第一。
+                                2016年的調查顯示，核能滿足了72%的法國電能需求。
+                                歐盟需要的26%的電能來自核反應。各國的核能政策均各有不同，有些反對依賴核能、有些則利用核能降低成本以滿足社會大眾。
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic06" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>大自然的有機物——生質能</h2>
+                            </div>
+                            <div class="col-12">
+                                生質能泛指所有有機物，其應用方式為經由各式自然或人為化學反應，將其中蘊含之化學能釋出，轉化為供人類使用之熱能。生質能轉換主要有三種：<br>
+                                1.物理轉換包括將廢棄物分類壓縮，從植物中搾油等等。<br>
+                                2.熱轉換包括了熱解、燃燒、氣化等，可以產生熱、氣體與油。其中燃燒是最常用。<br>
+                                3.生物轉換利用微生物或酵素將生質轉化成酒精、生質燃油或沼氣。<br><br>
+
+                                生質能具有多項優點，如可提供低硫燃料，降低空氣污染；使用廢物、家畜糞便生產能量，可減輕廢物處理，減少環境公害；但是因為生質能原料之含水量偏高（50～95％），故轉換效率偏低。<br><br>
+
+                                目前台灣生質能發電應用有垃圾焚化發電及沼氣發電二大類。前者以成為我國多數焚化廠之營運常態；
+                                後者則以豬糞尿厭氧消化處理為先驅，持續開發烹調、發電及運輸。
+                            </div>
+                            <div class="col-12">
+                                參考來源：維基百科、能源教育資訊網
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+-->
+    <div class="modal fade" id="character-comic02_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-2" role="document">
+            <div class="modal-content modal-content-2">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style=""></h5>
+                    <button type="button" class="close close-2" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="images/風能源_comic.jpg" alt="" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic03_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-2" role="document">
+            <div class="modal-content modal-content-2">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style=""></h5>
+                    <button type="button" class="close close-2" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="images/核能源_comic.jpg" alt="" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="character-comic04_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-2" role="document">
+            <div class="modal-content modal-content-2">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style=""></h5>
+                    <button type="button" class="close close-2" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="images/生質能源_comic.jpg" alt="" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="home" id="home">
+    <div id="background">
+        <div class="star" data-parallaxify-range="100"></div>
+    </div>
+    <div class="container home-container">
+        <div class="home_logo">
+            <div class="path">
+                <div class="sun">
+                    <img src="images/LOGO_2.png" width="100%"/>
+                </div>
+                <img src="images/rocket.png" class="avatar" />
+                <div class="Planet">
+                    <div class="pp planer01">
+                        <a href="#video" class="pagebtn"><img class="click_p01" src="images/planet01-01.png" width="100%"/></a>
+                        <img class="chh01 chh-l" src="images/水能星星去背.png" alt="" width="150%">
+                    </div>
+                    <div class="pp planer02">
+                        <a href="#video04" class="pagebtn"><img class="click_p02" src="images/planet02-01.png" width="100%"/></a>
+                        <img class="chh02 chh-l" src="images/風能星星去背.png" alt="" width="200%">
+                    </div>
+                    <div class="pp planer03">
+                        <a href="#video02" class="pagebtn"><img class="click_p03" src="images/planet03-01.png" width="100%"/></a>
+                        <img class="chh03 chh-l" src="images/化石燃料星星去背.png" alt="" width="150%">
+                    </div>
+                    <div class="pp planer04">
+                        <a href="#video03" class="pagebtn"><img class="click_p04" src="images/planet04-01.png" width="100%"/></a>
+                        <img class="chh04 chh-r" src="images/太陽能星星去背.png" alt="" width="200%">
+                    </div>
+                    <div class="pp planer05">
+                        <a href="#video05" class="pagebtn"><img class="click_p05" src="images/planet05-01.png" width="100%"/></a>
+                        <img class="chh05 chh-r" src="images/核能星星去背.png" alt="" width="150%">
+                    </div>
+                    <div class="pp planer06">
+                        <a href="#video06" class="pagebtn"><img class="click_p06" src="images/planet06-01.png" width="100%"/></a>
+                        <img class="chh06 chh-r" src="images/生值能星星去背.png" alt="" width="150%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="home-bottom">
+        <div class="container move">
+            <p>向下滑動</p>
+            <a href="#intro" class="pagebtn"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </div>
+</section>
+<section class="fixed-nav" id="fixed-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #38295b">
+        <a class="navbar-brand pagebtn" href="#home"><img src="images/LOGO_top.png" alt="" class="logo_img"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px;">
+            <ul class="navbar-nav mr-auto"></ul>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#intro">能源危機</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            探員出任務
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item pagebtn" href="#video">水能源</a>
+                            <a class="dropdown-item pagebtn" href="#video02">化石燃料能源</a>
+                            <a class="dropdown-item pagebtn" href="#video03">太陽能能源</a>
+                            <a class="dropdown-item pagebtn" href="#video04">風能源</a>
+                            <a class="dropdown-item pagebtn" href="#video05">核能能源</a>
+                            <a class="dropdown-item pagebtn" href="#video06">生質能能源</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#game">互動小遊戲</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pagebtn" href="#aboutus">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="idea.html" target="_blank" title="">製作歷程</a>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </nav>
+</section>
+<!-- Swiper -->
+<section class="water">
+    <article class="sslider" style="position: relative;" id="intro">
+        <div class="container">
+            <div class="row pt-5">
+                <h1></h1>
+            </div>
+            <div class="row pt-5">
+                <div class="col-1"></div>
+                <div class="col-12 videoframe" style="">
+                    <h1 style="color: #FFFFFF;text-align: center">能 源 危 機</h1>
+                    <img class="introoo" src="" alt="" style="position: absolute;top: 0;width: 99%;">
+                    <video width="100%" controls style="top: 0;">
+                        <source src="video/前導片.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="cutline">
+        <img src="images/cutline01.png" alt="">
+    </div>
+    <article class="sslider" id="video">
+        <div class="videotitle">
+            <h1>水<br>能<br>源</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <a href="#video" onclick="setCurTime1_1()"><img src="images/水問題1.png" alt="" width="100%"></a>
+                        <a href="#video" onclick="setCurTime1_2()"><img src="images/水問題2.png" alt="" width="100%"></a>
+                        <a href="#video" onclick="setCurTime1_3()"><img src="images/水問題3.png" alt="" width="100%"></a>
+                        <img src="images/水問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <div class="swiper-slide" style="">
+                        <div class="outgroung"><img src="images/水能_title_2.PNG" alt="" width="100%"></div>
+                        <video id="myVideo-1" width="100%" height="100%" controls>
+                            <source src="video/Fin.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="videoarrow">
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic01">
+                            <img src="images/認識水能探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <article class="sslider" id="video02">
+        <div class="videotitle">
+            <h1>化<br>石<br>能</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <a href="#video02" onclick="setCurTime2_1()"><img src="images/化石問題1.png" alt="" width="100%"></a>
+                        <a href="#video02" onclick="setCurTime2_2()"><img src="images/化石問題2.png" alt="" width="100%"></a>
+                        <a href="#video02" onclick="setCurTime2_3()"><img src="images/化石問題3.png" alt="" width="100%"></a>
+                        <img src="images/化石問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <div class="swiper-slide" style="">
+                        <div class="outgroung"><img src="images/化石_title_2.PNG" alt="" width="100%"></div>
+                        <video id="myvideo-2" width="100%" height="100%" controls>
+                            <source src="video/Fin_化石.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="videoarrow">
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic02">
+                            <img src="images/認識化石探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <article class="sslider" id="video03">
+        <div class="videotitle">
+            <h1>太<br>陽<br>能</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <img src="images/太陽問題1.png" alt="" width="100%">
+                        <img src="images/太陽問題2.png" alt="" width="100%">
+                        <img src="images/太陽問題3.png" alt="" width="100%">
+                        <img src="images/太陽問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <div class="swiper-slide" style="">
+                        <div class="outgroung"><img src="images/太陽能_title_2.PNG" alt="" width="100%"></div>
+                        <video width="100%" height="100%" controls>
+                            <source src="video/Fin_太陽.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="videoarrow">
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic03">
+                            <img src="images/認識太陽能探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="video04">
+        <div class="videotitle">
+            <h1>風<br>能<br>源</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <img src="images/風問題1.png" alt="" width="100%">
+                        <img src="images/風問題2.png" alt="" width="100%">
+                        <img src="images/風問題3.png" alt="" width="100%">
+                        <img src="images/風問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <a href="#video04" class="btn cha_detail comicbody" data-toggle="modal" data-target="#character-comic02_1" style="">
+                        <div class="swiper-slide" style="">
+                            <img src="images/風能_title_2.PNG" alt="" width="100%">
+                        </div>
+                    </a>
+                    <div class="videoarrow">
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic04">
+                            <img src="images/認識風能探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </article>
+    <article class="sslider" id="video05">
+        <div class="videotitle">
+            <h1>核<br>能<br>源</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <img src="images/核問題1.png" alt="" width="100%">
+                        <img src="images/核問題2.png" alt="" width="100%">
+                        <img src="images/核問題3.png" alt="" width="100%">
+                        <img src="images/核問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <a href="#video05" class="btn cha_detail comicbody" data-toggle="modal" data-target="#character-comic03_1" style="">
+                        <div class="swiper-slide" style="">
+                            <img src="images/核能_title_2.png" alt="" width="100%">
+                        </div>
+                    </a>
+                    <div class="videoarrow" >
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic05">
+                            <img src="images/認識核能探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="video06">
+        <div class="videotitle">
+            <h1>生<br>質<br>能</h1>
+        </div>
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-4 pt-5 videotext">
+                    <div class="QA">
+                        <img src="images/生質問題1.png" alt="" width="100%">
+                        <img src="images/生質問題2.png" alt="" width="100%">
+                        <img src="images/生質問題3.png" alt="" width="100%">
+                        <img src="images/生質問題4.png" alt="" width="100%">
+                    </div>
+                </div>
+                <div class="col-8 videoframe">
+                    <a href="#video05" class="btn cha_detail comicbody" data-toggle="modal" data-target="#character-comic04_1" style="">
+                        <div class="swiper-slide" style="">
+                            <img src="images/生質能_title_2.png" alt="" width="100%">
+                        </div>
+                    </a>
+                    <div class="videoarrow">
+                        <a href="#" class="cha_detail" data-toggle="modal" data-target="#character-comic06">
+                            <img src="images/認識生質能探員.png" alt="" height="100%">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+    <article class="sslider" id="game">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <div id="cards">
+                        <div class="cardd">
+                            <div class="face front"></div>
+                            <div class="face back"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5 pt-5">
+                    <h1>互動小遊戲</h1>
+                    <h4 class="mt-3">
+                        <strong>考考你，還記得在影片中看到的備轉容量率是什麼嗎？分別有哪五種呢？</strong>
+                    </h4>
+                    <h4 class="mt-3">
+                        <strong>用你強大的記憶力，找出所有相對應的牌。遊戲中使用鼠標點擊任意兩張牌，若相同則可翻開。</strong>
+                    </h4>
+                    <div class="start-btn mt-5" id="start-btn">
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">小提示</a>
+                    </div>
+                    <div class="collapse mt-2" id="collapseExample">
+                        <div class="card card-body">
+                            綠色：供電充裕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黃色：供電吃緊<br>橘色：供電警戒&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;黑色：限電準備
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <article class="sslider" id="aboutus">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-12 my-4"><h1>關於我們</h1></div><!-- /.col-lg-4 -->
+                <div class="col-1"><br><br><br><br><br></div><!-- /.col-lg-4 -->
+                <div class="col-2">
+                    <img class="bd-placeholder-img rounded-circle img-fade" src="images/person_img_01.jpg" alt="" width="150" height="150">
+                    <h3>許雯晴</h3>
+                    <p>企劃發想<br>美工設計<br>故事腳本</p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-2">
+                    <img class="bd-placeholder-img rounded-circle img-fade" src="images/person_img_02.jpg" alt="" width="150" height="150">
+                    <h3>杜靜雅</h3>
+                    <p>程式編寫<br>網頁設計<br>網站架設</p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-2">
+                    <img class="bd-placeholder-img rounded-circle img-fade" src="images/person_img_03.jpg" alt="" width="150" height="150">
+                    <h3>黃遠光</h3>
+                    <p>角色設計<br>動畫腳本<br>動畫製作</p>
+                </div><!-- /.col-lg-4 -->
+                <!--<div class="col-2"></div> /.col-lg-4 -->
+                <div class="col-2">
+                    <img class="bd-placeholder-img rounded-circle img-fade" src="images/person_img_04.jpg" alt="" width="150" height="150">
+                    <h3>洪宜寧</h3>
+                    <p>音效設計<br>文宣設計<br>企劃編修</p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-2">
+                    <img class="bd-placeholder-img rounded-circle img-fade" src="images/person_img_05.jpg" alt="" width="150" height="150">
+                    <h3>許家玲</h3>
+                    <p>資料收集<br>文宣發想<br>文本編寫</p>
+                </div><!-- /.col-lg-4 -->
+                <div class="col-2"></div><!-- /.col-lg-4 -->
+                <div class="col-12 pt-4" style="border-top: #38295b 1.5px dashed;">能源守護者是一個介紹能源的平台，<br>希望藉由具象化的角色讓孩子能有趣的學習到能源的相關知識，<br>在製作的過程中我們也學習到很多知識與技巧<br>特別感謝 王曉璿老師 指導</div>
+            </div>
+        </div>
+    </article>
+    <div class="footer">
+        <h6>©2019 能源守護者 Energy Guard - 能源知識教學網<br>
+            建議使用Google Chrome或Mozilla Firefox，並將螢幕解析度設定為1920*1080，以獲得最佳瀏覽效果
+        </h6>
+
+        <a href="#" id="gotop">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!--<div id="gotop2">
+            <a href="#">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>-->
+    </div>
+</section>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
+<script src="js/jquery.parallaxify.min.js"></script>
+
+<script type="text/javascript" src="scripts/videotime.js"></script>
+
+<script type="text/javascript" src="scripts/htm5game.matchgame.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        speed:800,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+        },
+    });
+</script>
+
+<!-- 黑屏 -->
+<script>
+    $(".btn.cha_detail").click(function(){
+        $(".sdetail").addClass("onclickd");
+        $(".dark").addClass("onclickd");
+    });
+
+    $(".close").click(function(){
+        $(".sdetail").removeClass("onclickd");
+        $(".dark").removeClass("onclickd");
+    });
+</script>
+
+<!-- 選單出現 -->
+<script>
+    //選單出現
+    $(".menu").hide();
+    $(window).scroll(function(){
+        if($(this).scrollTop()>800){
+            $(".menu").fadeIn();
+        } else {
+            $(".menu").fadeOut();
+        }
+    });
+
+    //緩慢滑動
+    $(document).on('click', '.pagebtn', function(event){
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 850);
+    });
+</script>
+
+<!-- 固定navbar -->
+<script>
+    /*固定navbar*/
+    window.onscroll = function() {myFunction()};
+
+    var navbar = document.getElementById("fixed-nav");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+</script>
+
+<!-- 星空script -->
+<script>
+    /*星空script*/
+    $(function(){
+        $(document).ready(function() {
+            var i,
+                size,
+                color,
+                width = $(document).width(),
+                height = $(document).height();
+
+            for (i = 1; i <= 250; i++) {
+                size = Math.ceil(3*Math.random());
+                $('#background').append('<div class="star" data-parallaxify-range="' + Math.round(100*Math.random()) + '" style="top: ' + Math.round(height*Math.random()) + 'px; left: ' + Math.round(width*Math.random()) + 'px; width: ' + size + 'px; height: ' + size + 'px;"></div>');
+            }
+
+            for (i = 1; i <= 150; i++) {
+                size = Math.ceil(5*Math.random()) + 2;
+                $('#background').append('<div class="star" data-parallaxify-range="' + Math.round(400*Math.random()) + '" style="top: ' + Math.round(height*Math.random()) + 'px; left: ' + Math.round(width*Math.random()) + 'px; width: ' + size + 'px; height: ' + size + 'px;"></div>');
+            }
+
+            for (i = 1; i <= 70; i++) {
+                size = Math.ceil(5*Math.random()) + 5;
+                $('#background').append('<div class="star" data-parallaxify-range="' + Math.round(600*Math.random()) + '" style="top: ' + Math.round(height*Math.random()) + 'px; left: ' + Math.round(width*Math.random()) + 'px; width: ' + size + 'px; height: ' + size + 'px; background: ' + color + '; box-shadow: 0px 0px 10px ' + color + ';"></div>');
+            }
+
+            $.parallaxify({
+                positionProperty: 'transform',
+                responsive: true,
+                motionType: 'natural',
+                mouseMotionType: 'gaussian',
+                motionAngleX: 80,
+                motionAngleY: 80,
+                alphaFilter: 0.5,
+                adjustBasePosition: true,
+                alphaPosition: 0.025,
+            });
+        });
+    });
+</script>
+
+<!--影片-->
+<script>
+    $(function(){
+        $('video').bind('play', function (e)
+        {
+            var video = $('video');
+            for(var i=0;i<video.length;i++)
+            {
+                if(video[i] != e.target)
+                {
+                    video[i].pause();
+                }
+            }
+        });
+    });
+</script>
+
+<!--遊戲-->
+<script type="text/javascript">
+    $(function(){
+        neusoft.matchingGame.deck.sort(shuffle);//实现随机洗牌
+        var $card=$(".cardd");//alert(neusoft.matchingGame.deck);
+        for(var i= 0;i<11;i++)
+        {
+            $card.clone().appendTo($("#cards"));
+        }
+        $(".cardd").each(function(index)//对每张牌进行设置
+        {
+            $(this).css({//调整坐标
+                "left":(neusoft.matchingGame.cardWidth+20)*(index%4)+"px",
+                "top":(neusoft.matchingGame.cardHeight+20)*Math.floor(index/4)+"px"
+            });
+            var pattern=neusoft.matchingGame.deck.pop();//吐出一个牌号
+            $(this).data("pattern",pattern);//暂存牌号
+            $(this).find(".back").addClass(pattern);//把其翻牌后的对应牌面附加上去
+            $(this).click(selectCard);//点击牌的功能函数挂接
+        });
+    });
+</script>
+
+<!--TOP-->
+<script type="text/javascript">
+    $(function() {
+        /* 按下GoTop按鈕時的事件 */
+        $('#gotop').click(function(){
+            $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+            return false;
+        });
+
+        /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop按鈕出現 */
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 500){
+                $('#gotop').fadeIn();
+            } else {
+                $('#gotop').fadeOut();
+            }
+        });
+    });
+
+    $(function () {
+        /* 偵測卷軸滑動時，往下滑超過400px就讓GoTop2按鈕出現 */
+        $(window).scroll(function() {
+            if ( $(this).scrollTop() > 700){
+                $('#gotop2').fadeIn();
+            } else {
+                $('#gotop2').fadeOut();
+            }
+        });
+    })
+</script>
+
+<!--滾動浮現-->
+<script>
+    $(window).on('scroll load', function() {
+        $('.sslider > *').each(function(i) {
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight() / 8;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if (bottom_of_window > bottom_of_object) {
+                $(this).css({
+                    'opacity': '1',
+                    'transform': 'translateY(' + 0 + 'em)'
+                });
+            } else {
+                $(this).css({
+                    'opacity': '0',
+                    'transform': 'translateY(' + 2 + 'em)'
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+</script>
+
+<!--星星圖案-->
+<script>
+    $(".click_p01").hover(function() {
+        $(".chh01").addClass("onhover");
+    }, function() {
+        $(".chh01").removeClass("onhover");
+    });
+
+    $(".click_p02").hover(function() {
+        $(".chh02").addClass("onhover");
+    }, function() {
+        $(".chh02").removeClass("onhover");
+    });
+
+    $(".click_p03").hover(function() {
+        $(".chh03").addClass("onhover");
+    }, function() {
+        $(".chh03").removeClass("onhover");
+    });
+
+    $(".click_p04").hover(function() {
+        $(".chh04").addClass("onhover");
+    }, function() {
+        $(".chh04").removeClass("onhover");
+    });
+
+    $(".click_p05").hover(function() {
+        $(".chh05").addClass("onhover");
+    }, function() {
+        $(".chh05").removeClass("onhover");
+    });
+
+    $(".click_p06").hover(function() {
+        $(".chh06").addClass("onhover");
+    }, function() {
+        $(".chh06").removeClass("onhover");
+    });
+
+    $(".click_p06").hover(function() {
+        $(".chh06").addClass("onhover");
+    }, function() {
+        $(".chh06").removeClass("onhover");
+    });
+
+</script>
+
+
+
+</body>
+</html>
+
